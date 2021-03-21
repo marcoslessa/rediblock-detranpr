@@ -1,0 +1,32 @@
+{
+    "name": "Salvador de erros do simulado do DetranPR",
+    "description": "Ao terminar um simulado com erros, permite que você salve as questões antes da página do DetranPR atualizar!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.simulado.detran.pr.gov.br/detran-prova/**"
+            ],
+            "js": [
+                "bye-detran-redirect.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/byebye-detran-16.png",
+            "32": "/images/byebye-detran-32.png",
+            "48": "/images/byebye-detran-48.png",
+            "128": "/images/byebye-detran-128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/byebye-detran-16.png",
+        "32": "/images/byebye-detran-32.png",
+        "48": "/images/byebye-detran-48.png",
+        "128": "/images/byebye-detran-128.png"
+    }
+}
