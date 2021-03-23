@@ -1,32 +1,42 @@
 {
-    "name": "Salvador de erros do simulado do DetranPR",
-    "description": "Ao terminar um simulado com erros, permite que você salve as questões antes da página do DetranPR atualizar!",
-    "version": "1.0",
+    "name": "RediBlock DetranPR",
+    "description": "Evita que a página de resultado do simulado (DetranPR) mude sozinha.",
+    "version": "0.0.0.1",
     "manifest_version": 3,
-    "options_page": "options.html",
     "content_scripts": [
         {
             "matches": [
-                "*://www.simulado.detran.pr.gov.br/detran-prova/**"
+                "*://www.simulado.detran.pr.gov.br/detran-prova/simularProva.do?action=calcularResultado**"
             ],
             "js": [
-                "bye-detran-redirect.js"
+                "js/content_script.js"
             ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "js/rediblock-detranpr.js"
+            ],
+            "matches": [
+                "*://www.simulado.detran.pr.gov.br/*"
+            ],
+            "extension_ids": []
         }
     ],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "/images/byebye-detran-16.png",
-            "32": "/images/byebye-detran-32.png",
-            "48": "/images/byebye-detran-48.png",
-            "128": "/images/byebye-detran-128.png"
+            "16": "/images/rediblock-detranpr-16.png",
+            "32": "/images/rediblock-detranpr-32.png",
+            "48": "/images/rediblock-detranpr-48.png",
+            "128": "/images/rediblock-detranpr-128.png"
         }
     },
     "icons": {
-        "16": "/images/byebye-detran-16.png",
-        "32": "/images/byebye-detran-32.png",
-        "48": "/images/byebye-detran-48.png",
-        "128": "/images/byebye-detran-128.png"
+        "16": "/images/rediblock-detranpr-16.png",
+        "32": "/images/rediblock-detranpr-32.png",
+        "48": "/images/rediblock-detranpr-48.png",
+        "128": "/images/rediblock-detranpr-128.png"
     }
 }
